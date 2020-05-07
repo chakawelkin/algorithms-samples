@@ -23,18 +23,39 @@ import java.util.*;
  *
  *         return new ArrayList<>(set);
  *     }}
- *  2、排序 + 双指针
+ *  2、排序 + 双指针 （左右夹逼法）
  *
  */
 public class ThreeSum {
 
     public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> lists = new ArrayList<>();
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] > 0 ) break; // 结束，后面的无需遍历
-            if (nums[i + 1] == nums[i]) continue; // 存在相同的，可以先忽略
-
+            if (i > 0 && nums[i] == nums[i - 1]) continue; // 存在相同的，可以先忽略
+            int L = i + 1;
+            int R = nums.length - 1;
+            while (L < R){
+                int sum = nums[i] + nums[L] + nums[R];
+                if (sum == 0){
+                    lists.add(Arrays.asList(nums[i], nums[L], nums[R]));
+                    while (L < R && nums[L] == nums[L + 1]){//去重操作
+                        L++;
+                    }
+                    while (L < R && nums[R] == nums[R - 1]){//去重操作
+                        R--;
+                    }
+                    L++;
+                    R--;
+                }else if (sum < 0) {
+                    L++;
+                }else {
+                    R--;
+                }
+            }
         }
+        return lists;
     }
 
     public static void main(String[] args) {
