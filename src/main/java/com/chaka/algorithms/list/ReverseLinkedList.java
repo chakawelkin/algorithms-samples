@@ -1,5 +1,7 @@
 package com.chaka.algorithms.list;
 
+import com.chaka.algorithms.list.node.ListNode;
+
 /**
  * 链表的反转
  *  1、双指针迭代
@@ -35,23 +37,6 @@ public class ReverseLinkedList {
        head.next.next = head;
        head.next = null;
        return curr;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 
 }
