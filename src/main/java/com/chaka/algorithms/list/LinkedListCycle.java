@@ -2,9 +2,6 @@ package com.chaka.algorithms.list;
 
 import com.chaka.algorithms.list.node.ListNode;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * 环形链表
  *  1、hash表 （时间复杂度为O(n)）
@@ -20,7 +17,7 @@ import java.util.Set;
  *         }
  *         return false;
  *     }}
- *  2、快慢指针
+ *  2、快慢指针 空间复杂度O(1)
  */
 public class LinkedListCycle {
 
