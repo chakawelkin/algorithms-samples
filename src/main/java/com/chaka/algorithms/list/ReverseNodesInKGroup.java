@@ -4,6 +4,8 @@ import com.chaka.algorithms.list.node.ListNode;
 
 /**
  * K 个一组翻转链表
+ *  1、尾插法
+ *  2、递归
  */
 public class ReverseNodesInKGroup {
 
@@ -31,10 +33,6 @@ public class ReverseNodesInKGroup {
             head = curr;
         }
         return head;
-
-        //先找出连续的k个节点
-
-        //对这连续的k个节点进行翻转
     }
 
 }
