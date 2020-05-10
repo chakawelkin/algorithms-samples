@@ -5,7 +5,7 @@ package com.chaka.algorithms.list.node;
  */
 public class ListNode {
 
-    int val;
+    public int val;
 
     public ListNode next;
 
