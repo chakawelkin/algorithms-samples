@@ -5,6 +5,27 @@ import java.util.Stack;
 /**
  * 接雨水
  *  1、双指针
+ *  public static int trap(int[] height) {
+ *         int left = 0;
+ *         int right = height.length - 1;
+ *         int result = 0;
+ *         int leftMax = 0;
+ *         int rightMax = 0;
+ *         while (left <= right){
+ *             if (leftMax <= rightMax){
+ *                 result += leftMax - height[left] > 0 ?
+ *                         leftMax - height[left] : 0;
+ *                 leftMax = Math.max(leftMax,height[left]);
+ *                 left++;
+ *             }else {
+ *                 result += rightMax - height[right] > 0 ?
+ *                         rightMax - height[right] : 0;
+ *                 rightMax = Math.max(rightMax,height[right]);
+ *                 right--;
+ *             }
+ *         }
+ *         return result;
+ *     }
  *  2、栈
  */
 public class TrappingRainWater {
@@ -26,7 +47,7 @@ public class TrappingRainWater {
     }
 
     public static void main(String[] args) {
-        System.out.println(TrappingRainWater.trap(new int[]{2,1,0,2}));
+        System.out.println(TrappingRainWater.trap(new int[]{2, 1, 0, 2}));
     }
 
 }
