@@ -7,6 +7,8 @@ import java.util.List;
  * 括号生成
  * <a href="https://leetcode-cn.com/problems/generate-parentheses/">数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合</a>
  * 1、深度优先搜索
+ * 2、广度优先搜索
+ * 3、动态规划
  */
 public class GenerateParentheses {
 
