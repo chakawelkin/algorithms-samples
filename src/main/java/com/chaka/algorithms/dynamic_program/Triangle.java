@@ -1,6 +1,5 @@
 package com.chaka.algorithms.dynamic_program;
 
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -9,11 +8,14 @@ import java.util.List;
 public class Triangle {
 
     public int minimumTotal(List<List<Integer>> triangle) {
-        int sum = 0;
-        for (int i = 0; i < triangle.size(); i++) {
-            sum += Collections.min(triangle.get(i));
+        for (int i = triangle.size() - 1; i > 0 ; i--) {
+            List<Integer> list = triangle.get(i);
+            for (int j = 0; j < list.size() - 1; j++) {
+                List<Integer> upList = triangle.get(i - 1);
+                upList.set(j, upList.get(j) + Math.min(list.get(j),list.get(j + 1)));
+            }
         }
-        return sum;
+        return triangle.get(0).get(0);
     }
 
 }
