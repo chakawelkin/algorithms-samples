@@ -21,13 +21,36 @@ import java.util.Arrays;
  *
  *         return Math.max(dp[dp.length - 1][0],dp[dp.length - 1][1]);
  *      }}
- *
+
  *
  */
 public class HouseRobber {
 
     //二维状态数组记录
     public int rob(int[] nums) {
+        int n = nums.length;
+        int dp_i_1 = 0;
+        int dp_i_2 = 0;
+        int dp = 0;
+        for (int i = 2; i < n + 2; i++) {
+            //1、这一间不偷那么当前偷到的最大值为上一间
+            //2、这一间偷，那么为当间的金额加上上上间的金额
+            dp = Math.max(dp_i_1,nums[i - 2] + dp_i_2);
+            dp_i_2 = dp_i_1;
+            dp_i_1 = dp;
+        }
+        return dp;
+    }
+
+
+
+    /**
+     * 起始金额肯定为0
+     * 1、不抢，去下家
+     * 2、抢，去下下家
+     */
+
+    /*public int rob(int[] nums) {
         int[] dp = new int[nums.length];
         Arrays.fill(dp,-1);
         return dp(nums, dp,0);
@@ -41,12 +64,6 @@ public class HouseRobber {
             dp[start] = Math.max(dp(nums, dp, start + 1), nums[start] + dp(nums, dp, start + 2));
         }
         return dp[start];
-    }
-
-    /**
-     * 起始金额肯定为0
-     * 1、不抢，去下家
-     * 2、抢，去下下家
-     */
+    }*/
 
 }
