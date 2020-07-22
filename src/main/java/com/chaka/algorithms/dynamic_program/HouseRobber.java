@@ -1,5 +1,7 @@
 package com.chaka.algorithms.dynamic_program;
 
+import java.util.Arrays;
+
 /**
  * <a href="https://leetcode-cn.com/problems/house-robber/">打家劫舍</a>
  *
@@ -26,21 +28,25 @@ public class HouseRobber {
 
     //二维状态数组记录
     public int rob(int[] nums) {
-        if (nums.length == 0){
+        int[] dp = new int[nums.length];
+        Arrays.fill(dp,-1);
+        return dp(nums, dp,0);
+    }
+
+    public int dp(int[] nums, int[] dp, int start){
+        if (start >= nums.length){
             return 0;
         }
-        if (nums.length == 1){
-            return nums[0];
+        if (dp[start] == -1){
+            dp[start] = Math.max(dp(nums, dp, start + 1), nums[start] + dp(nums, dp, start + 2));
         }
-        int[] dp = new int[nums.length];
-        dp[0] = nums[0];
-        dp[1] = Math.max(nums[0],nums[1]);
-        int ans = dp[1];
-        for (int i = 2; i < dp.length; i++) {
-            dp[i] = Math.max(dp[i -1],dp[i - 2] + nums[i]);
-            ans = Math.max(dp[i],ans);
-        }
-        return ans;
-     }
+        return dp[start];
+    }
+
+    /**
+     * 起始金额肯定为0
+     * 1、不抢，去下家
+     * 2、抢，去下下家
+     */
 
 }
