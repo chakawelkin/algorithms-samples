@@ -20,7 +20,6 @@ public class BestTimeToBuyAndSellStock {
             return 0;
         }
         int n = prices.length;
-        //int[][] dp = new int[n][2];
         int dp_i_0 = 0;
         int dp_i_1 = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
