@@ -11,6 +11,8 @@ package com.chaka.algorithms.dynamic_program;
  *  2、昨日无股票，今天买入
  *  dp[i][k][1] = max(dp[i-1][k][1],dp[i-1][k-1][0] - price[i])
  *
+ *  k代表交易次数
+ *
  *  买入时，最大交易次数减一
  */
 public class BestTimeToBuyAndSellStock {
