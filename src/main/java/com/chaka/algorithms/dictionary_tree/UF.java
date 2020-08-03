@@ -2,7 +2,8 @@ package com.chaka.algorithms.dictionary_tree;
 
 /**
  * 并查集
- * 1、主要作用： 解决动态连通性一类问题
+ *     1、主要作用： 解决动态连通性一类问题
+ *     参考 <a href="https://blog.csdn.net/dm_vincent/article/details/7655764"/>
  */
 public class UF {
 
