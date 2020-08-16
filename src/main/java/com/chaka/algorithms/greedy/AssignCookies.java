@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/assign-cookies/description/">分发饼干</a>
- *
+ * 用最小的饼干满足胃口最小的孩子，从而达到尽可能满足最多的孩子
  */
 public class AssignCookies {
 
@@ -31,11 +31,6 @@ public class AssignCookies {
                 break;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        AssignCookies assignCookies = new AssignCookies();
-        System.out.println(assignCookies.findContentChildren(new int[]{1,2,3},new int[]{1,1}));
     }
 
 }
