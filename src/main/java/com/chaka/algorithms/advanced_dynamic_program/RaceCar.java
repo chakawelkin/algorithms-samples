@@ -2,6 +2,9 @@ package com.chaka.algorithms.advanced_dynamic_program;
 
 /**
  * <a href="https://leetcode-cn.com/problems/race-car/">赛车</a>
+ * 两种情况
+ *  1、未达到i时就开始回头
+ *  2、过了i才开始回头
  */
 public class RaceCar {
 
