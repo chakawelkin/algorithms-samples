@@ -5,6 +5,7 @@ package com.chaka.algorithms.string;
  *  中心扩展法
  *      1、aba
  *      2、caac
+ *      3、adcbcdf --> start = 0, end = 6 i = 3 , len = 5
  */
 public class LongestPalindromicSubstring {
 
