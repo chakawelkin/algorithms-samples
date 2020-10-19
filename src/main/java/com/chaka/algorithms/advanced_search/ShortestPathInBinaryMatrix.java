@@ -5,6 +5,7 @@ import java.util.Queue;
 
 /**
  * <a href="https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/">二进制矩阵中的最短路径</a>
+ * BFS
  */
 public class ShortestPathInBinaryMatrix {
 
