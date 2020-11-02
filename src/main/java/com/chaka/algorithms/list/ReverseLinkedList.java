@@ -32,6 +32,7 @@ public class ReverseLinkedList {
        if(head == null || head.next == null){
            return head;
        }
+       //找到最终节点
        ListNode curr = reverseList(head.next);
        //此时curr为最后一个节点
        head.next.next = head;

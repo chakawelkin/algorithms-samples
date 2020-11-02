@@ -54,7 +54,6 @@ import com.chaka.algorithms.list.node.ListNode;
  */
 public class MergeTwoSortedLists {
 
-
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null){
             return l2;

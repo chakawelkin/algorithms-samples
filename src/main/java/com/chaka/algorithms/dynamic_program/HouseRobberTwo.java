@@ -6,24 +6,30 @@ package com.chaka.algorithms.dynamic_program;
  * 2、第2间 -> 最后1间
  */
 public class HouseRobberTwo {
-
     public int rob(int[] nums) {
-        return Math.max(robRange(nums,0,nums.length - 1),
-                        robRange(nums,1,nums.length));
-    }
-
-    public int robRange(int[] nums,int start,int end){
-        int dp_i_1 = 0;
-        int dp_i_2 = 0;
-        int dp = 0;
-        for (int i = start + 2; i < end + 2; i++) {
-            //1、这一间不偷那么当前偷到的最大值为上一间
-            //2、这一间偷，那么为当间的金额加上上上间的金额
-            dp = Math.max(dp_i_1,nums[i - 2] + dp_i_2);
-            dp_i_2 = dp_i_1;
-            dp_i_1 = dp;
+        if (nums == null || nums.length == 0){
+            return 0;
         }
-        return dp;
+        if (nums.length == 1){
+            return nums[0];
+        }
+        return Math.max(roRange(nums,0,nums.length - 1),
+                roRange(nums,1,nums.length));
     }
 
+    private int roRange(int[] nums,int start,int end){
+        int[][] dp = new int[end - start][2];
+        dp[0][0] = 0;
+        dp[0][1] = nums[start];
+        for (int i = 1; i < end -start; i++) {
+            dp[i][0] = Math.max(dp[i-1][1],dp[i-1][0]);
+            dp[i][1] = dp[i-1][0] + nums[i + start];
+        }
+        return Math.max(dp[end -start-1][1],dp[end -start-1][0]);
+    }
+
+    public static void main(String[] args) {
+        HouseRobberTwo solve = new HouseRobberTwo();
+        solve.rob(new int[]{2,3,2});
+    }
 }

@@ -3,6 +3,7 @@ package com.chaka.algorithms.list;
 /**
  * 删除排序数组中的重复项
  *  双指针，快慢指针
+ *
  */
 public class RemoveDuplicatesFromSortedArray {
 

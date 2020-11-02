@@ -23,7 +23,6 @@ public class MergeSortedArray {
         if (m < 1){
             System.arraycopy(nums2,0,nums1,0,n);
         }
-
     }
 
     public static void main(String[] args) {
