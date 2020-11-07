@@ -1,4 +1,4 @@
-package com.chaka.algorithms.sort;
+package com.chaka.algorithms.sort.sorting;
 
 public class QuickSort {
 
