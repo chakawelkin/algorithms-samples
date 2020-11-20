@@ -8,17 +8,17 @@ public class PowxN {
 
     public double myPow(double x, int n) {
         if (n < 0){
+            x = 1/x;
             n = Math.abs(n);
-            x = 1 / x;
         }
-        return rePow(x,n);
+        return dc(x,n);
     }
 
-    private double rePow(double x, long n){
+    public double dc(double x,long n){
         if (n == 0){
             return 1;
         }
-        return n % 2 == 0 ? rePow(x * x, (n / 2)) : x * rePow(x * x, (n / 2));
+        return n % 2 == 0 ?  dc(x * x , n / 2) : x * dc(x * x , n / 2);
     }
 
     public static void main(String[] args) {
