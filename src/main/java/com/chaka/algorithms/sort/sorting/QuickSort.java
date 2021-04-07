@@ -1,56 +1,57 @@
 package com.chaka.algorithms.sort.sorting;
 
+/**
+ * 快速排序，主要是利用分治的思想来完成处理的
+ */
 public class QuickSort {
 
-    private int[] array;
-    public QuickSort(int[] array) {
-        this.array = array;
-    }
-    public void sort() {
-        quickSort(array, 0, array.length - 1);
-    }
-    public void print() {
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
-        }
-    }
-
-    /**
-     * 递归排序
-     * @param src
-     * @param begin
-     * @param end
-     */
-    private void quickSort(int[] src, int begin, int end) {
-        if (begin < end) {
-            int key = src[begin];
-            int i = begin;
-            int j = end;
-            while (i < j) {
-                while (i < j && src[j] > key) {
-                    j--;
-                }
-                if (i < j) {
-                    src[i] = src[j];
-                    i++;
-                }
-                while (i < j && src[i] < key) {
-                    i++;
-                }
-                if (i < j) {
-                    src[j] = src[i];
-                    j--;
-                }
-            }
-            src[i] = key;
-            quickSort(src, begin, i - 1);
-            quickSort(src, i + 1, end);
-        }
-    }
-
     public static void main(String[] args) {
-        QuickSort sort = new QuickSort(new int[]{50,3,5,78,56,29,32,7,29,9});
-        sort.sort();
-        sort.print();
+        QuickSort sort = new QuickSort();
+        sort.sort(new int[]{2,4,3,9,7,1});
+    }
+
+    public void sort(int[] nums){
+        quickSort(nums,0,nums.length-1);
+        for(int num:nums){
+            System.out.println(num);
+        }
+    }
+
+    private void quickSort(int[] nums, int start, int end){
+        if (start > end){
+            return;
+        }
+        int middle = partition(nums,start,end);
+        quickSort(nums,start,middle - 1);
+        quickSort(nums,middle + 1,end);
+    }
+
+    private int partition(int[] nums, int start, int end){
+        int pivot = nums[start];
+        int left = start + 1;
+        int right = end;
+        while (left < right){
+            while (left < right && nums[left] <= pivot){
+                left++;
+            }
+            if (left != right){
+                swap(nums,left,right);
+                right--;
+            }
+        }
+        if (left == right && nums[right] > pivot){
+            right--;
+        }
+        //基数和中间数交换
+        if (right != start){
+            swap(nums,start,right);
+        }
+        return right;
+    }
+
+    private void swap(int[] nums, int i, int j){
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
     }
 }
