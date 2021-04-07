@@ -13,7 +13,7 @@ public class ShellSort {
                 int j = i;
                 int curr = arr[i];
                 while (j - gap >= 0 && curr < arr[j - gap]){
-                    arr[i] = arr[j - gap];
+                    arr[j] = arr[j - gap];
                     j = j - gap;
                 }
                 arr[j] = curr;
@@ -24,7 +24,7 @@ public class ShellSort {
 
     public static void main(String[] args) {
         ShellSort sort = new ShellSort();
-        for (int i : sort.sort(new int[]{1, 2, 4, 3, 23, 5, 7})) {
+        for (int i : sort.sort(new int[]{6, 2, 1, 3, 5, 4})) {
             System.out.println(i);
         }
     }
