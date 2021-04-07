@@ -13,9 +13,10 @@ public class HeapSort {
     public static void sort(int[] nums){
         //构建大顶堆
         buildMaxHeap(nums);
-        //交换元素
+        //交换元素,依次将大顶推的根节点拿出来放在数组最后
         for (int i = nums.length - 1; i >= 0; i--) {
             swap(nums,0,i);
+            //每次调整堆顶元素
             maxHeapify(nums,0,i);
         }
         for(int num:nums){
