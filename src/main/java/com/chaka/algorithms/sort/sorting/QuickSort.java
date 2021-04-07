@@ -31,11 +31,17 @@ public class QuickSort {
         int left = start + 1;
         int right = end;
         while (left < right){
+            //找到第一个大于pivot的
             while (left < right && nums[left] <= pivot){
                 left++;
             }
-            if (left != right){
+            //找到第一个小于pivot的
+            while (left < right && nums[right] >= pivot){
+                right--;
+            }
+            if (left < right){
                 swap(nums,left,right);
+                left++;
                 right--;
             }
         }
@@ -43,9 +49,7 @@ public class QuickSort {
             right--;
         }
         //基数和中间数交换
-        if (right != start){
-            swap(nums,start,right);
-        }
+        swap(nums,start,right);
         return right;
     }
 
