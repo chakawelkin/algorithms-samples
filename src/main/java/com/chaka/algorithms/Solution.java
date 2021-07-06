@@ -1,8 +1,9 @@
 package com.chaka.algorithms;
 
-import com.chaka.algorithms.list.node.ListNode;
+import com.chaka.algorithms.tree.node.TreeNode;
 
-import java.util.PriorityQueue;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Solution {
     public void nextPermutation(int[] nums) {
@@ -41,7 +42,21 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution sol = new Solution();
+        long i = 10106140046L;
+        //2147483647
+        //10106140046
         sol.nextPermutation(new int[]{1,3,2});
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(i > Integer.MAX_VALUE);
+        System.out.println(Long.MAX_VALUE);
+
+        TreeNode root = new TreeNode(1);
+
+        Queue<TreeNode> queue = new LinkedList<TreeNode>(){
+            {
+                add(root);
+            }
+        };
     }
 
 }

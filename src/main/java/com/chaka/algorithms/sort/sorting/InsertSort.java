@@ -7,16 +7,15 @@ package com.chaka.algorithms.sort.sorting;
 public class InsertSort {
 
     public int[] sort(int[] arr){
-        int len = arr.length;
-        int preIdx,curr;
-        for (int i = 1; i < len; i++) {
-            preIdx = i - 1;
-            curr = arr[i];
-            while (preIdx >=0 && arr[preIdx] > curr){
-                arr[preIdx + 1] = arr[preIdx];
-                preIdx--;
+        for (int i = 1; i < arr.length; i++) {
+            int curr = arr[i];
+            int j = i - 1;
+            //不断将比curr大的数字向后挪
+            while (j >= 0 && curr < arr[j]){
+                arr[j + 1] = arr[j];
+                j--;
             }
-            arr[preIdx + 1] = curr;
+            arr[j + 1] = curr;
         }
         return arr;
     }
