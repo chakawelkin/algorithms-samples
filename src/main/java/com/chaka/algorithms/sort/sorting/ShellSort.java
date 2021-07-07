@@ -9,8 +9,9 @@ public class ShellSort {
         int len = arr.length;
         // eg : gap == 5/2/1
         for (int gap = len /2; gap > 0; gap = gap / 2){
+            //5
             for (int i = gap; i < len;i++){
-                int j = i;
+                int j = i;//5
                 int curr = arr[i];
                 while (j - gap >= 0 && curr < arr[j - gap]){
                     arr[j] = arr[j - gap];
