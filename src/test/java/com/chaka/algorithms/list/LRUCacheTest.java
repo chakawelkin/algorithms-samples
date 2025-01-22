@@ -1,5 +1,7 @@
 package com.chaka.algorithms.list;
 
+import java.util.Arrays;
+
 public class LRUCacheTest {
 
     public static void main(String[] args) {
@@ -14,6 +16,10 @@ public class LRUCacheTest {
            // 该操作会使得密钥 2 作废
         System.out.println(cache.get(2));       // 返回 -1 (未找到)
 
+        String abc = "acb";
+        byte[] bytes = abc.getBytes();
+        Arrays.sort(bytes);
+        abc = new String(bytes);
     }
 
 }

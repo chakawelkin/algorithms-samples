@@ -1,7 +1,6 @@
 package com.chaka.algorithms.tree;
 
 import com.chaka.algorithms.tree.node.Node;
-import netscape.security.UserTarget;
 
 import java.util.ArrayList;
 import java.util.Collections;

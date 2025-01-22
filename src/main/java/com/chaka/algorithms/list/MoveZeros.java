@@ -1,5 +1,7 @@
 package com.chaka.algorithms.list;
 
+import java.util.Arrays;
+
 /**
  * 移动零
  * 1、两套循环
@@ -10,19 +12,7 @@ package com.chaka.algorithms.list;
  */
 public class MoveZeros {
 
-
     public void moveZeroes(int[] nums) {
-        /*int j = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != 0){
-                nums[j++] = nums[i];
-            }
-        }
-
-        for (;j < nums.length;j++){
-            nums[j] = 0;
-        }*/
-
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0){
@@ -34,9 +24,14 @@ public class MoveZeros {
                     nums[j++] = temp;
                 }
             }
+            System.out.println(Arrays.toString(Arrays.stream(nums).toArray()));
         }
     }
 
-
+    public static void main(String[] args) {
+        int[] nums = new int[]{12,3,4,5};
+        new MoveZeros().moveZeroes(nums);
+        Arrays.asList(nums);
+    }
 
 }

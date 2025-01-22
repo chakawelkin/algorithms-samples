@@ -60,7 +60,7 @@ public class ThreeSum {
 
     public static void main(String[] args) {
         ThreeSum threeSum = new ThreeSum();
-        List<List<Integer>> lists = threeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4});
+        List<List<Integer>> lists = threeSum.threeSum(new int[]{-1,0,1,2,-1,-4});
         System.out.println(lists);
     }
 
